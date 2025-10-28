@@ -15,7 +15,6 @@ pruebas del sistema
             --success-color: #27ae60;
             --warning-color: #f39c12;
             --news-bg: #c5a71f; /* Fondo dorado para noticias */
-           
         }
 
         * {
@@ -31,17 +30,200 @@ pruebas del sistema
             line-height: 1.6;
             background: #1a6fc9;
             background: linear-gradient(90deg,rgba(26, 111, 201, 1) 0%, rgba(87, 122, 199, 1) 47%, rgba(237, 221, 83, 1) 100%);
-
-    
         }
         
+        /* Estilos para el sistema de autenticación */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .auth-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+        }
+        
+        .auth-logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .auth-logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .auth-title {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+        
+        .auth-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .auth-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+        }
+        
+        .auth-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .auth-form input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        
+        .auth-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .auth-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .auth-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .auth-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .auth-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .alert {
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .alert-danger {
+            background-color: rgba(197, 48, 48, 0.2);
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .alert-success {
+            background-color: rgba(39, 174, 96, 0.2);
+            border: 1px solid var(--success-color);
+            color: var(--success-color);
+        }
+        
+        .alert-warning {
+            background-color: rgba(243, 156, 18, 0.2);
+            border: 1px solid var(--warning-color);
+            color: var(--warning-color);
+        }
+        
+        /* Estilos para modales */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .modal-title {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent-color);
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Estilos para el contenido principal (oculto inicialmente) */
+        .main-app {
+            display: none;
+        }
+        
+        /* Resto de estilos existentes para la aplicación principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
         
-        /* Header estilo CICPC */
         .cicpc-header {
             background-color: var(--primary-color);
             color: white;
@@ -64,7 +246,7 @@ pruebas del sistema
         }
         
         .logo-cicpc {
-            width: 80px; /* Aumentado para mejor visualización del logo */
+            width: 80px;
             height: 80px;
             display: flex;
             justify-content: center;
@@ -73,18 +255,18 @@ pruebas del sistema
             color: white;
             font-size: 0.9rem;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil */
+            background-color: rgba(255, 255, 255, 0.1);
             position: relative;
-            border-radius: 50%; /* Hacemos el logo redondo */
-            overflow: hidden; /* Asegura que la imagen no se salga del círculo */
-            border: 2px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
         
         .logo-cicpc img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que la imagen cubra todo el círculo */
-            border-radius: 50%; /* Hace la imagen redonda también */
+            object-fit: cover;
+            border-radius: 50%;
         }
         
         .org-title {
@@ -113,7 +295,6 @@ pruebas del sistema
             margin-bottom: 3px;
         }
         
-        /* Barra de noticias */
         .news-bar {
             background-color: var(--news-bg);
             padding: 8px 20px;
@@ -145,10 +326,12 @@ pruebas del sistema
             margin-right: 5px;
         }
         
-        /* Navegación principal */
         .main-nav {
             background-color: var(--secondary-color);
             padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
         .main-nav ul {
@@ -167,6 +350,21 @@ pruebas del sistema
         
         .main-nav a:hover, .main-nav a.active {
             background-color: var(--primary-color);
+        }
+        
+        .logout-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+        
+        .logout-btn:hover {
+            background-color: #b3961c;
         }
         
         .main-content {
@@ -221,7 +419,6 @@ pruebas del sistema
             border: 1px solid #062e5f;
             border-radius: 4px;
             font-size: 1rem;
-            
         }
         
         textarea {
@@ -341,10 +538,9 @@ pruebas del sistema
             margin-bottom: 20px;
         }
         
-        /* Modificación para formato carnet en la captura */
         .face-preview {
-            width: 150px; /* Ancho estándar para foto carnet */
-            height: 190px; /* Alto estándar para foto carnet */
+            width: 150px;
+            height: 190px;
             border: 2px solid #ddd;
             border-radius: 8px;
             margin: 0 auto 10px;
@@ -360,7 +556,7 @@ pruebas del sistema
         .face-preview img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+            object-fit: cover;
             display: none;
         }
         
@@ -405,7 +601,6 @@ pruebas del sistema
             overflow-y: auto;
         }
         
-        /* Modificación para formato carnet en la lista */
         .inmate-item {
             display: flex;
             align-items: flex-start;
@@ -423,10 +618,9 @@ pruebas del sistema
             box-shadow: 0 3px 8px rgba(0,0,0,0.1);
         }
         
-        /* Foto carnet en la lista */
         .inmate-photo {
-            width: 120px; /* Ancho para foto carnet en lista */
-            height: 150px; /* Alto para foto carnet en lista */
+            width: 120px;
+            height: 150px;
             border-radius: 4px;
             object-fit: cover;
             margin-right: 15px;
@@ -492,30 +686,6 @@ pruebas del sistema
         
         .search-box {
             margin-bottom: 20px;
-        }
-        
-        .alert {
-            padding: 10px 15px;
-            border-radius: 4px;
-            margin-bottom: 15px;
-        }
-        
-        .alert-success {
-            background-color: rgba(39, 174, 96, 0.2);
-            border: 1px solid var(--success-color);
-            color: var(--success-color);
-        }
-        
-        .alert-warning {
-            background-color: rgba(243, 156, 18, 0.2);
-            border: 1px solid var(--warning-color);
-            color: var(--warning-color);
-        }
-        
-        .alert-danger {
-            background-color: rgba(197, 48, 48, 0.2);
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
         }
         
         .tabs {
@@ -649,7 +819,7 @@ pruebas del sistema
         }
         
         /* Modal de edición */
-        .modal {
+        .edit-modal {
             display: none;
             position: fixed;
             top: 0;
@@ -662,7 +832,7 @@ pruebas del sistema
             align-items: center;
         }
         
-        .modal-content {
+        .edit-modal-content {
             background-color: white;
             border-radius: 8px;
             width: 90%;
@@ -673,7 +843,7 @@ pruebas del sistema
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
         
-        .modal-header {
+        .edit-modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -682,13 +852,13 @@ pruebas del sistema
             border-bottom: 1px solid #eee;
         }
         
-        .modal-title {
+        .edit-modal-title {
             color: var(--primary-color);
             font-size: 1.5rem;
             font-weight: bold;
         }
         
-        .close-modal {
+        .close-edit-modal {
             background: none;
             border: none;
             font-size: 1.5rem;
@@ -696,11 +866,11 @@ pruebas del sistema
             color: #666;
         }
         
-        .close-modal:hover {
+        .close-edit-modal:hover {
             color: var(--accent-color);
         }
         
-        .modal-footer {
+        .edit-modal-footer {
             display: flex;
             justify-content: flex-end;
             gap: 10px;
@@ -757,103 +927,350 @@ pruebas del sistema
             .inmate-actions {
                 flex-direction: row;
             }
+            
+            .auth-card {
+                padding: 20px;
+            }
         }
     </style>
 </head>
-<body> 
-
+<body>
+    <!-- Fondo con opacidad -->
     <div>
-         <img src="sistema bio/img/cicpc logo.jpg" alt="imagen de Fondo" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.1;">
+        <img src="sistema bio/img/cicpc logo.jpg" alt="imagen de Fondo" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.1;">
     </div>
-    <!-- Header estilo CICPC -->
-    <header class="cicpc-header">
-        <div class="header-top">
-            <div class="logo-section">
-                <div class="logo-cicpc" id="logo-container">
-                    <!-- Aquí va el logo del CICPC -->
-                    <img src="sistema bio/img/cicpc logo.jpg" alt="">
-                    <span id="logo-text" style="display:none;">CICPC</span>
+
+    <!-- Sistema de Autenticación (Login o Registro) -->
+    <div class="auth-container" id="auth-container">
+        <div class="auth-card">
+            <div class="auth-logo">
+                <img src="sistema bio/img/cicpc logo.jpg" alt="Logo CICPC">
+            </div>
+            <h2 class="auth-title" id="auth-title">Sistema de Registro Biométrico</h2>
+            
+            <!-- Formulario de Login (mostrado por defecto) -->
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" placeholder="Ingrese su usuario" required>
                 </div>
-                <div class="org-title">
-                    <div class="org-name">CICPC</div>
-                    <div class="org-subtitle">INVESTIGACIONES CIENTÍFICAS, PENALES Y CRIMINALÍSTICAS</div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingrese su contraseña" required>
+                </div>
+                <button type="submit" class="auth-btn" id="login-btn">Iniciar Sesión</button>
+                <div class="auth-links">
+                    <a href="#" id="forgot-password-link">¿Olvidó su contraseña?</a>
+                    <a href="#" id="register-link">Registrarse</a>
+                </div>
+            </form>
+            
+            <!-- Formulario de Registro (oculto inicialmente) -->
+            <form class="auth-form" id="register-form" style="display: none;">
+                <div class="form-group">
+                    <label for="register-name">Nombre Completo</label>
+                    <input type="text" id="register-name" placeholder="Ingrese su nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-username">Usuario</label>
+                    <input type="text" id="register-username" placeholder="Cree un nombre de usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Correo Electrónico</label>
+                    <input type="email" id="register-email" placeholder="Ingrese su correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Contraseña</label>
+                    <input type="password" id="register-password" placeholder="Cree una contraseña" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Confirmar Contraseña</label>
+                    <input type="password" id="register-confirm-password" placeholder="Confirme su contraseña" required>
+                </div>
+                <button type="submit" class="auth-btn" id="register-btn">Registrarse</button>
+                <div class="auth-links">
+                    <a href="#" id="login-link">¿Ya tiene cuenta? Iniciar Sesión</a>
+                </div>
+            </form>
+            
+            <div id="auth-alert" class="alert" style="display: none;"></div>
+        </div>
+    </div>
+
+    <!-- Aplicación Principal (oculta inicialmente) -->
+    <div class="main-app" id="main-app">
+        <!-- Header estilo CICPC -->
+        <header class="cicpc-header">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="logo-cicpc" id="logo-container">
+                        <img src="sistema bio/img/cicpc logo.jpg" alt="Logo CICPC">
+                        <span id="logo-text" style="display:none;">CICPC</span>
+                    </div>
+                    <div class="org-title">
+                        <div class="org-name">CICPC</div>
+                        <div class="org-subtitle">INVESTIGACIONES CIENTÍFICAS, PENALES Y CRIMINALÍSTICAS</div>
+                    </div>
+                </div>
+                <div class="directiva">
+                    <div>Sistema Biométrico</div>
+                    <div>Usuario: <span id="current-user">Administrador</span></div>
+                </div>
+            </div>
+            
+            <div class="news-bar">
+                <div class="news-label">NOTICIAS:</div>
+                <div class="news-items">
+                    <div class="news-item">Sistema de registro biométrico implementado exitosamente</div>
+                    <div class="news-item">Mejoras en seguridad del sistema de identificación</div>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active" data-tab="register">Registro</a></li>
+                    <li><a href="#" data-tab="verify">Verificación</a></li>
+                    <li><a href="#" data-tab="inmates">Lista de Reclusos</a></li>
+                </ul>
+                <button class="logout-btn" id="logout-btn">Cerrar Sesión</button>
+            </nav>
+        </header>
+
+        <div class="container">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-inmates">0</div>
+                    <div class="stat-label">Total Reclusos</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="today-registrations">0</div>
+                    <div class="stat-label">Registros Hoy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="repeat-offenders">0</div>
+                    <div class="stat-label">Reincidentes</div>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <div class="tab active" data-tab="register">Registro de Detenido</div>
+                <div class="tab" data-tab="verify">Verificación de Huella</div>
+                <div class="tab" data-tab="inmates">Lista de Reclusos</div>
+            </div>
+
+            <div class="tab-content active" id="register-tab">
+                <div class="card">
+                    <h2>Registro de Nuevo Detenido</h2>
+                    <form id="inmate-form">
+                        <h3>Datos Personales</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inmate-name" class="required">Nombre</label>
+                                <input type="text" id="inmate-name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inmate-lastname" class="required">Apellido</label>
+                                <input type="text" id="inmate-lastname" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inmate-id" class="required">Documento de Identidad</label>
+                                <input type="text" id="inmate-id" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inmate-birthdate">Fecha de Nacimiento</label>
+                                <input type="date" id="inmate-birthdate">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inmate-nationality">Nacionalidad</label>
+                                <input type="text" id="inmate-nationality" value="venezolano">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inmate-crime" class="required">Delito o Causa de Ingreso</label>
+                                <input type="text" id="inmate-crime" required>
+                        </div>
+                        
+                        <div class="section-divider"></div>
+                        
+                        <h3>Datos Biométricos</h3>
+                        
+                        <div class="form-group">
+                            <label class="required">Foto de Rostro (Formato Carnet)</label>
+                            <div class="face-capture">
+                                <div class="face-preview carnet" id="face-preview">
+                                    <span>Vista previa de la foto carnet</span>
+                                    <img id="face-image" src="" alt="Foto de rostro">
+                                </div>
+                                <input type="file" id="face-file" class="file-input" accept="image/*">
+                                <label for="face-file" class="file-label">Seleccionar archivo</label>
+                                <div class="file-name" id="file-name">Sin archivos seleccionados</div>
+                                <div class="photo-instructions">
+                                    <p><strong>Requisitos para foto carnet:</strong></p>
+                                    <ul>
+                                        <li>Fondo blanco o claro</li>
+                                        <li>Rostro frontal y bien iluminado</li>
+                                        <li>Sin gorras, gafas oscuras o accesorios que oculten el rostro</li>
+                                        <li>Expresión neutra</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4>Características Físicas</h4>
+                        
+                        <div class="physical-characteristics">
+                            <div class="form-group">
+                                <label for="inmate-gender">Sexo</label>
+                                <select id="inmate-gender">
+                                    <option value="">Seleccionar</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inmate-height">Estatura (cm)</label>
+                                <input type="number" id="inmate-height" min="100" max="250">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inmate-weight">Peso (kg)</label>
+                                <input type="number" id="inmate-weight" min="30" max="200">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inmate-eyes">Color de Ojos</label>
+                                <input type="text" id="inmate-eyes">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inmate-skin">Color de Piel</label>
+                                <input type="text" id="inmate-skin">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inmate-marks">Marcas Particulares</label>
+                            <textarea id="inmate-marks" placeholder="Describa marcas particulares"></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="inmate-tattoos">Tatuajes</label>
+                                <textarea id="inmate-tattoos" placeholder="Describa tatuajes"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inmate-scars">Cicatrices</label>
+                                <textarea id="inmate-scars" placeholder="Describa cicatrices"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">Captura de Huella Dactilar</label>
+                            <div class="biometric-capture" id="biometric-capture">
+                                <div class="fingerprint-scanner">
+                                    <div class="fingerprint-image">
+                                        <div class="fingerprint-lines"></div>
+                                    </div>
+                                    <div class="scan-animation"></div>
+                                </div>
+                                <p>Coloque el dedo en el escáner</p>
+                                <div class="fingerprint-status" id="fingerprint-status">Esperando captura...</div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit">Registrar Detenido</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="tab-content" id="verify-tab">
+                <div class="card">
+                    <h2>Verificación de Huella Dactilar</h2>
+                    <div class="biometric-capture" id="verify-biometric">
+                        <div class="fingerprint-scanner">
+                            <div class="fingerprint-image">
+                                <div class="fingerprint-lines"></div>
+                            </div>
+                            <div class="scan-animation"></div>
+                        </div>
+                        <p>Coloque el dedo en el escáner para verificación</p>
+                        <div class="fingerprint-status" id="verify-fingerprint-status">Esperando captura...</div>
+                    </div>
+                    <button id="verify-btn">Verificar Identidad</button>
+                    <div id="verification-result" class="verification-result" style="display:none;"></div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="inmates-tab">
+                <div class="card">
+                    <h2>Lista de Reclusos Registrados</h2>
+                    <div class="search-box">
+                        <input type="text" id="search-inmate" placeholder="Buscar por nombre, apellido o documento...">
+                    </div>
+                    <div class="inmate-list" id="inmate-list">
+                        <!-- Los reclusos se cargarán aquí dinámicamente -->
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="news-bar">
-            <!-- Contenido de noticias -->
-        </div>
-        
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#" class="active" data-tab="register">Registro</a></li>
-                <li><a href="#" data-tab="verify">Verificación</a></li>
-                <li><a href="#" data-tab="inmates">Lista de Reclusos</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div class="container">
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-value" id="total-inmates">0</div>
-                <div class="stat-label">Total Reclusos</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value" id="today-registrations">0</div>
-                <div class="stat-label">Registros Hoy</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value" id="repeat-offenders">0</div>
-                <div class="stat-label">Reincidentes</div>
-            </div>
-        </div>
-
-        <div class="tabs">
-            <div class="tab active" data-tab="register">Registro de Detenido</div>
-            <div class="tab" data-tab="verify">Verificación de Huella</div>
-            <div class="tab" data-tab="inmates">Lista de Reclusos</div>
-        </div>
-
-        <div class="tab-content active" id="register-tab">
-            <div class="card">
-                <h2>Registro de Nuevo Detenido</h2>
-                <form id="inmate-form">
+        <!-- Modal para editar recluso -->
+        <div class="edit-modal" id="edit-modal">
+            <div class="edit-modal-content">
+                <div class="edit-modal-header">
+                    <h2 class="edit-modal-title">Editar Datos del Recluso</h2>
+                    <button class="close-edit-modal">&times;</button>
+                </div>
+                <form id="edit-inmate-form">
+                    <input type="hidden" id="edit-inmate-id">
+                    
                     <h3>Datos Personales</h3>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="inmate-name" class="required">Nombre</label>
-                            <input type="text" id="inmate-name" required>
+                            <label for="edit-inmate-name" class="required">Nombre</label>
+                            <input type="text" id="edit-inmate-name" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="inmate-lastname" class="required">Apellido</label>
-                            <input type="text" id="inmate-lastname" required>
+                            <label for="edit-inmate-lastname" class="required">Apellido</label>
+                            <input type="text" id="edit-inmate-lastname" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="inmate-id" class="required">Documento de Identidad</label>
-                            <input type="text" id="inmate-id" required>
+                        <label for="edit-inmate-id" class="required">Documento de Identidad</label>
+                        <input type="text" id="edit-inmate-id" required readonly>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="inmate-birthdate">Fecha de Nacimiento</label>
-                            <input type="date" id="inmate-birthdate">
+                            <label for="edit-inmate-birthdate">Fecha de Nacimiento</label>
+                            <input type="date" id="edit-inmate-birthdate">
                         </div>
                         
                         <div class="form-group">
-                            <label for="inmate-nationality">Nacionalidad</label>
-                            <input type="text" id="inmate-nationality" value="venezolano">
+                            <label for="edit-inmate-nationality">Nacionalidad</label>
+                            <input type="text" id="edit-inmate-nationality">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="inmate-crime" class="required">Delito o Causa de Ingreso</label>
-                            <input type="text" id="inmate-crime" required>
+                        <label for="edit-inmate-crime" class="required">Delito o Causa de Ingreso</label>
+                        <input type="text" id="edit-inmate-crime" required>
                     </div>
                     
                     <div class="section-divider"></div>
@@ -863,22 +1280,13 @@ pruebas del sistema
                     <div class="form-group">
                         <label class="required">Foto de Rostro (Formato Carnet)</label>
                         <div class="face-capture">
-                            <div class="face-preview carnet" id="face-preview">
+                            <div class="face-preview carnet" id="edit-face-preview">
                                 <span>Vista previa de la foto carnet</span>
-                                <img id="face-image" src="" alt="Foto de rostro">
+                                <img id="edit-face-image" src="" alt="Foto de rostro">
                             </div>
-                            <input type="file" id="face-file" class="file-input" accept="image/*">
-                            <label for="face-file" class="file-label">Seleccionar archivo</label>
-                            <div class="file-name" id="file-name">Sin archivos seleccionados</div>
-                            <div class="photo-instructions">
-                                <p><strong>Requisitos para foto carnet:</strong></p>
-                                <ul>
-                                    <li>Fondo blanco o claro</li>
-                                    <li>Rostro frontal y bien iluminado</li>
-                                    <li>Sin gorras, gafas oscuras o accesorios que oculten el rostro</li>
-                                    <li>Expresión neutra</li>
-                                </ul>
-                            </div>
+                            <input type="file" id="edit-face-file" class="file-input" accept="image/*">
+                            <label for="edit-face-file" class="file-label">Cambiar foto</label>
+                            <div class="file-name" id="edit-file-name">Sin archivos seleccionados</div>
                         </div>
                     </div>
                     
@@ -886,8 +1294,8 @@ pruebas del sistema
                     
                     <div class="physical-characteristics">
                         <div class="form-group">
-                            <label for="inmate-gender">Sexo</label>
-                            <select id="inmate-gender">
+                            <label for="edit-inmate-gender">Sexo</label>
+                            <select id="edit-inmate-gender">
                                 <option value="">Seleccionar</option>
                                 <option value="Masculino">Masculino</option>
                                 <option value="Femenino">Femenino</option>
@@ -896,220 +1304,200 @@ pruebas del sistema
                         </div>
                         
                         <div class="form-group">
-                            <label for="inmate-height">Estatura (cm)</label>
-                            <input type="number" id="inmate-height" min="100" max="250">
+                            <label for="edit-inmate-height">Estatura (cm)</label>
+                            <input type="number" id="edit-inmate-height" min="100" max="250">
                         </div>
                         
                         <div class="form-group">
-                            <label for="inmate-weight">Peso (kg)</label>
-                            <input type="number" id="inmate-weight" min="30" max="200">
+                            <label for="edit-inmate-weight">Peso (kg)</label>
+                            <input type="number" id="edit-inmate-weight" min="30" max="200">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="inmate-eyes">Color de Ojos</label>
-                            <input type="text" id="inmate-eyes">
+                            <label for="edit-inmate-eyes">Color de Ojos</label>
+                            <input type="text" id="edit-inmate-eyes">
                         </div>
                         
                         <div class="form-group">
-                            <label for="inmate-skin">Color de Piel</label>
-                            <input type="text" id="inmate-skin">
+                            <label for="edit-inmate-skin">Color de Piel</label>
+                            <input type="text" id="edit-inmate-skin">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="inmate-marks">Marcas Particulares</label>
-                        <textarea id="inmate-marks" placeholder="Describa marcas particulares"></textarea>
+                        <label for="edit-inmate-marks">Marcas Particulares</label>
+                        <textarea id="edit-inmate-marks" placeholder="Describa marcas particulares"></textarea>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="inmate-tattoos">Tatuajes</label>
-                            <textarea id="inmate-tattoos" placeholder="Describa tatuajes"></textarea>
+                            <label for="edit-inmate-tattoos">Tatuajes</label>
+                            <textarea id="edit-inmate-tattoos" placeholder="Describa tatuajes"></textarea>
                         </div>
                         
                         <div class="form-group">
-                            <label for="inmate-scars">Cicatrices</label>
-                            <textarea id="inmate-scars" placeholder="Describa cicatrices"></textarea>
+                            <label for="edit-inmate-scars">Cicatrices</label>
+                            <textarea id="edit-inmate-scars" placeholder="Describa cicatrices"></textarea>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label class="required">Captura de Huella Dactilar</label>
-                        <div class="biometric-capture" id="biometric-capture">
-                            <div class="fingerprint-scanner">
-                                <div class="fingerprint-image">
-                                    <div class="fingerprint-lines"></div>
-                                </div>
-                                <div class="scan-animation"></div>
-                            </div>
-                            <p>Coloque el dedo en el escáner</p>
-                            <div class="fingerprint-status" id="fingerprint-status">Esperando captura...</div>
-                        </div>
+                    <div class="edit-modal-footer">
+                        <button type="button" class="btn-danger" id="cancel-edit">Cancelar</button>
+                        <button type="submit" class="btn-warning">Actualizar Datos</button>
                     </div>
-                    
-                    <button type="submit">Registrar Detenido</button>
                 </form>
-            </div>
-        </div>
-
-        <div class="tab-content" id="verify-tab">
-            <div class="card">
-                <h2>Verificación de Huella Dactilar</h2>
-                <div class="biometric-capture" id="verify-biometric">
-                    <div class="fingerprint-scanner">
-                        <div class="fingerprint-image">
-                            <div class="fingerprint-lines"></div>
-                        </div>
-                        <div class="scan-animation"></div>
-                    </div>
-                    <p>Coloque el dedo en el escáner para verificación</p>
-                    <div class="fingerprint-status" id="verify-fingerprint-status">Esperando captura...</div>
-                </div>
-                <button id="verify-btn">Verificar Identidad</button>
-                <div id="verification-result" class="verification-result" style="display:none;"></div>
-            </div>
-        </div>
-
-        <div class="tab-content" id="inmates-tab">
-            <div class="card">
-                <h2>Lista de Reclusos Registrados</h2>
-                <div class="search-box">
-                    <input type="text" id="search-inmate" placeholder="Buscar por nombre, apellido o documento...">
-                </div>
-                <div class="inmate-list" id="inmate-list">
-                    <!-- Los reclusos se cargarán aquí dinámicamente -->
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Modal para editar recluso -->
-    <div class="modal" id="edit-modal">
+    <!-- Modal para recuperación de contraseña -->
+    <div class="modal" id="forgot-password-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title">Editar Datos del Recluso</h2>
+                <h2 class="modal-title">Recuperar Contraseña</h2>
                 <button class="close-modal">&times;</button>
             </div>
-            <form id="edit-inmate-form">
-                <input type="hidden" id="edit-inmate-id">
-                
-                <h3>Datos Personales</h3>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="edit-inmate-name" class="required">Nombre</label>
-                        <input type="text" id="edit-inmate-name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="edit-inmate-lastname" class="required">Apellido</label>
-                        <input type="text" id="edit-inmate-lastname" required>
-                    </div>
-                </div>
-                
+            <form id="forgot-password-form">
                 <div class="form-group">
-                    <label for="edit-inmate-id" class="required">Documento de Identidad</label>
-                    <input type="text" id="edit-inmate-id" required readonly>
+                    <label for="recovery-email">Correo Electrónico</label>
+                    <input type="email" id="recovery-email" placeholder="Ingrese su correo electrónico" required>
                 </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="edit-inmate-birthdate">Fecha de Nacimiento</label>
-                        <input type="date" id="edit-inmate-birthdate">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="edit-inmate-nationality">Nacionalidad</label>
-                        <input type="text" id="edit-inmate-nationality">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="edit-inmate-crime" class="required">Delito o Causa de Ingreso</label>
-                    <input type="text" id="edit-inmate-crime" required>
-                </div>
-                
-                <div class="section-divider"></div>
-                
-                <h3>Datos Biométricos</h3>
-                
-                <div class="form-group">
-                    <label class="required">Foto de Rostro (Formato Carnet)</label>
-                    <div class="face-capture">
-                        <div class="face-preview carnet" id="edit-face-preview">
-                            <span>Vista previa de la foto carnet</span>
-                            <img id="edit-face-image" src="" alt="Foto de rostro">
-                        </div>
-                        <input type="file" id="edit-face-file" class="file-input" accept="image/*">
-                        <label for="edit-face-file" class="file-label">Cambiar foto</label>
-                        <div class="file-name" id="edit-file-name">Sin archivos seleccionados</div>
-                    </div>
-                </div>
-                
-                <h4>Características Físicas</h4>
-                
-                <div class="physical-characteristics">
-                    <div class="form-group">
-                        <label for="edit-inmate-gender">Sexo</label>
-                        <select id="edit-inmate-gender">
-                            <option value="">Seleccionar</option>
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="edit-inmate-height">Estatura (cm)</label>
-                        <input type="number" id="edit-inmate-height" min="100" max="250">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="edit-inmate-weight">Peso (kg)</label>
-                        <input type="number" id="edit-inmate-weight" min="30" max="200">
-                    </div>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="edit-inmate-eyes">Color de Ojos</label>
-                        <input type="text" id="edit-inmate-eyes">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="edit-inmate-skin">Color de Piel</label>
-                        <input type="text" id="edit-inmate-skin">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="edit-inmate-marks">Marcas Particulares</label>
-                    <textarea id="edit-inmate-marks" placeholder="Describa marcas particulares"></textarea>
-                </div>
-                
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="edit-inmate-tattoos">Tatuajes</label>
-                        <textarea id="edit-inmate-tattoos" placeholder="Describa tatuajes"></textarea>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="edit-inmate-scars">Cicatrices</label>
-                        <textarea id="edit-inmate-scars" placeholder="Describa cicatrices"></textarea>
-                    </div>
-                </div>
-                
                 <div class="modal-footer">
-                    <button type="button" class="btn-danger" id="cancel-edit">Cancelar</button>
-                    <button type="submit" class="btn-warning">Actualizar Datos</button>
+                    <button type="button" class="btn-danger" id="cancel-recovery">Cancelar</button>
+                    <button type="submit" class="auth-btn">Enviar Instrucciones</button>
                 </div>
             </form>
+            <div id="recovery-alert" class="alert" style="display: none;"></div>
         </div>
     </div>
 
     <script>
+        // Backend simulado para el sistema de autenticación
+        const authBackend = {
+            // Usuarios almacenados (en un sistema real, esto estaría en una base de datos)
+            users: JSON.parse(localStorage.getItem('prisonSystemUsers')) || [],
+            
+            // Verificar si hay usuarios registrados
+            hasUsers: function() {
+                return this.users.length > 0;
+            },
+            
+            // Verificar credenciales
+            login: function(username, password) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const user = this.users.find(u => u.username === username && u.password === password);
+                        if (user) {
+                            resolve({
+                                success: true,
+                                user: {
+                                    id: user.id,
+                                    username: user.username,
+                                    name: user.name,
+                                    role: user.role
+                                }
+                            });
+                        } else {
+                            reject({
+                                success: false,
+                                message: 'Usuario o contraseña incorrectos'
+                            });
+                        }
+                    }, 1000); // Simular tiempo de respuesta del servidor
+                });
+            },
+            
+            // Registrar nuevo usuario
+            register: function(userData) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        // Verificar si el usuario ya existe
+                        const existingUser = this.users.find(u => u.username === userData.username);
+                        if (existingUser) {
+                            reject({
+                                success: false,
+                                message: 'El nombre de usuario ya está en uso'
+                            });
+                            return;
+                        }
+                        
+                        // Verificar si el correo ya está registrado
+                        const existingEmail = this.users.find(u => u.email === userData.email);
+                        if (existingEmail) {
+                            reject({
+                                success: false,
+                                message: 'El correo electrónico ya está registrado'
+                            });
+                            return;
+                        }
+                        
+                        // Verificar que las contraseñas coincidan
+                        if (userData.password !== userData.confirmPassword) {
+                            reject({
+                                success: false,
+                                message: 'Las contraseñas no coinciden'
+                            });
+                            return;
+                        }
+                        
+                        // Crear nuevo usuario
+                        const newUser = {
+                            id: this.users.length + 1,
+                            username: userData.username,
+                            password: userData.password, // En un sistema real, esto debería estar encriptado
+                            email: userData.email,
+                            name: userData.name,
+                            role: 'administrador', // El primer usuario siempre será administrador
+                            registrationDate: new Date().toISOString()
+                        };
+                        
+                        // Agregar a la lista de usuarios
+                        this.users.push(newUser);
+                        this.saveUsers();
+                        
+                        resolve({
+                            success: true,
+                            message: 'Usuario registrado exitosamente',
+                            user: {
+                                id: newUser.id,
+                                username: newUser.username,
+                                name: newUser.name,
+                                role: newUser.role
+                            }
+                        });
+                    }, 1000);
+                });
+            },
+            
+            // Recuperar contraseña
+            recoverPassword: function(email) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        const user = this.users.find(u => u.email === email);
+                        if (user) {
+                            // En un sistema real, aquí se enviaría un correo con instrucciones
+                            resolve({
+                                success: true,
+                                message: 'Se han enviado las instrucciones para recuperar su contraseña a su correo electrónico.'
+                            });
+                        } else {
+                            reject({
+                                success: false,
+                                message: 'No se encontró ningún usuario con ese correo electrónico.'
+                            });
+                        }
+                    }, 1000);
+                });
+            },
+            
+            // Guardar usuarios en localStorage
+            saveUsers: function() {
+                localStorage.setItem('prisonSystemUsers', JSON.stringify(this.users));
+            }
+        };
+
         // Base de datos simulada (en un caso real, esto estaría en un servidor)
         let inmates = JSON.parse(localStorage.getItem('prisonInmates')) || [];
         let todayRegistrations = JSON.parse(localStorage.getItem('todayRegistrations')) || { count: 0, date: new Date().toDateString() };
@@ -1120,7 +1508,24 @@ pruebas del sistema
             localStorage.setItem('todayRegistrations', JSON.stringify(todayRegistrations));
         }
         
-        // Elementos del DOM
+        // Elementos del DOM para el sistema de autenticación
+        const authContainer = document.getElementById('auth-container');
+        const mainApp = document.getElementById('main-app');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const authAlert = document.getElementById('auth-alert');
+        const authTitle = document.getElementById('auth-title');
+        const registerLink = document.getElementById('register-link');
+        const loginLink = document.getElementById('login-link');
+        const forgotPasswordLink = document.getElementById('forgot-password-link');
+        const forgotPasswordModal = document.getElementById('forgot-password-modal');
+        const forgotPasswordForm = document.getElementById('forgot-password-form');
+        const recoveryAlert = document.getElementById('recovery-alert');
+        const cancelRecoveryBtn = document.getElementById('cancel-recovery');
+        const logoutBtn = document.getElementById('logout-btn');
+        const currentUserElement = document.getElementById('current-user');
+        
+        // Elementos del DOM para la aplicación principal
         const inmateForm = document.getElementById('inmate-form');
         const inmateList = document.getElementById('inmate-list');
         const searchInmate = document.getElementById('search-inmate');
@@ -1159,7 +1564,7 @@ pruebas del sistema
         const editFacePreview = document.getElementById('edit-face-preview');
         const editFaceImage = document.getElementById('edit-face-image');
         const editFileName = document.getElementById('edit-file-name');
-        const closeModalBtn = document.querySelector('.close-modal');
+        const closeEditModalBtn = document.querySelector('.close-edit-modal');
         const cancelEditBtn = document.getElementById('cancel-edit');
         
         // Elementos del logo
@@ -1178,15 +1583,40 @@ pruebas del sistema
         let facePhotoData = null;
         let editFacePhotoData = null;
         
+        // Estado de autenticación
+        let currentUser = null;
+        
         // Inicializar la aplicación
         function init() {
-            updateStats();
-            renderInmateList();
+            // Verificar si ya hay una sesión activa
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                showMainApp();
+            } else {
+                // Verificar si hay usuarios registrados
+                if (authBackend.hasUsers()) {
+                    showLogin();
+                } else {
+                    showRegistration();
+                }
+            }
+            
             setupEventListeners();
         }
         
         // Configurar event listeners
         function setupEventListeners() {
+            // Login
+            loginForm.addEventListener('submit', handleLogin);
+            registerForm.addEventListener('submit', handleRegistration);
+            registerLink.addEventListener('click', showRegistration);
+            loginLink.addEventListener('click', showLogin);
+            forgotPasswordLink.addEventListener('click', showForgotPasswordModal);
+            forgotPasswordForm.addEventListener('submit', handlePasswordRecovery);
+            cancelRecoveryBtn.addEventListener('click', closeForgotPasswordModal);
+            logoutBtn.addEventListener('click', handleLogout);
+            
             // Envío del formulario
             inmateForm.addEventListener('submit', handleFormSubmit);
             
@@ -1213,7 +1643,7 @@ pruebas del sistema
             });
             
             // Modal de edición
-            closeModalBtn.addEventListener('click', closeEditModal);
+            closeEditModalBtn.addEventListener('click', closeEditModal);
             cancelEditBtn.addEventListener('click', closeEditModal);
             editInmateForm.addEventListener('submit', handleEditFormSubmit);
             
@@ -1223,6 +1653,183 @@ pruebas del sistema
                     closeEditModal();
                 }
             });
+            
+            // Cerrar modal de recuperación al hacer clic fuera
+            forgotPasswordModal.addEventListener('click', (e) => {
+                if (e.target === forgotPasswordModal) {
+                    closeForgotPasswordModal();
+                }
+            });
+        }
+        
+        // Mostrar pantalla de login
+        function showLogin() {
+            loginForm.style.display = 'block';
+            registerForm.style.display = 'none';
+            authTitle.textContent = 'Iniciar Sesión';
+            authAlert.style.display = 'none';
+        }
+        
+        // Mostrar pantalla de registro
+        function showRegistration() {
+            loginForm.style.display = 'none';
+            registerForm.style.display = 'block';
+            authTitle.textContent = 'Registro de Administrador';
+            authAlert.style.display = 'none';
+        }
+        
+        // Mostrar aplicación principal
+        function showMainApp() {
+            authContainer.style.display = 'none';
+            mainApp.style.display = 'block';
+            currentUserElement.textContent = currentUser.name;
+            updateStats();
+            renderInmateList();
+        }
+        
+        // Manejar inicio de sesión
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Mostrar indicador de carga
+            const loginBtn = loginForm.querySelector('.auth-btn');
+            const originalText = loginBtn.textContent;
+            loginBtn.textContent = 'Iniciando sesión...';
+            loginBtn.disabled = true;
+            
+            authBackend.login(username, password)
+                .then(response => {
+                    if (response.success) {
+                        currentUser = response.user;
+                        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                        showMainApp();
+                        showAuthAlert('Inicio de sesión exitoso', 'success');
+                    }
+                })
+                .catch(error => {
+                    showAuthAlert(error.message, 'danger');
+                })
+                .finally(() => {
+                    // Restaurar el botón
+                    loginBtn.textContent = originalText;
+                    loginBtn.disabled = false;
+                });
+        }
+        
+        // Manejar registro de usuario
+        function handleRegistration(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('register-name').value;
+            const username = document.getElementById('register-username').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+            
+            // Mostrar indicador de carga
+            const registerBtn = registerForm.querySelector('.auth-btn');
+            const originalText = registerBtn.textContent;
+            registerBtn.textContent = 'Registrando...';
+            registerBtn.disabled = true;
+            
+            authBackend.register({
+                name,
+                username,
+                email,
+                password,
+                confirmPassword
+            })
+                .then(response => {
+                    if (response.success) {
+                        currentUser = response.user;
+                        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                        showMainApp();
+                        showAuthAlert(response.message, 'success');
+                    }
+                })
+                .catch(error => {
+                    showAuthAlert(error.message, 'danger');
+                })
+                .finally(() => {
+                    // Restaurar el botón
+                    registerBtn.textContent = originalText;
+                    registerBtn.disabled = false;
+                });
+        }
+        
+        // Manejar cierre de sesión
+        function handleLogout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            // Verificar si hay usuarios registrados para mostrar login o registro
+            if (authBackend.hasUsers()) {
+                showLogin();
+            } else {
+                showRegistration();
+            }
+            authContainer.style.display = 'flex';
+            mainApp.style.display = 'none';
+            loginForm.reset();
+            registerForm.reset();
+        }
+        
+        // Mostrar modal de recuperación de contraseña
+        function showForgotPasswordModal(e) {
+            e.preventDefault();
+            forgotPasswordModal.style.display = 'flex';
+        }
+        
+        // Cerrar modal de recuperación de contraseña
+        function closeForgotPasswordModal() {
+            forgotPasswordModal.style.display = 'none';
+            recoveryAlert.style.display = 'none';
+            forgotPasswordForm.reset();
+        }
+        
+        // Manejar recuperación de contraseña
+        function handlePasswordRecovery(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('recovery-email').value;
+            
+            // Mostrar indicador de carga
+            const submitBtn = forgotPasswordForm.querySelector('.auth-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            authBackend.recoverPassword(email)
+                .then(response => {
+                    if (response.success) {
+                        showAuthAlert(response.message, 'success', recoveryAlert);
+                        setTimeout(() => {
+                            closeForgotPasswordModal();
+                        }, 3000);
+                    }
+                })
+                .catch(error => {
+                    showAuthAlert(error.message, 'danger', recoveryAlert);
+                })
+                .finally(() => {
+                    // Restaurar el botón
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        }
+        
+        // Mostrar alerta en el sistema de autenticación
+        function showAuthAlert(message, type, container = authAlert) {
+            container.textContent = message;
+            container.className = `alert alert-${type}`;
+            container.style.display = 'block';
+            
+            // Ocultar después de 3 segundos
+            setTimeout(() => {
+                container.style.display = 'none';
+            }, 3000);
         }
         
         // Cambiar pestañas
@@ -1306,7 +1913,7 @@ pruebas del sistema
                 fingerprintStatus.className = "fingerprint-status status-captured";
                 isScanning = false;
                 
-                showAlert('Huella dactilar capturada exitosamente', 'success');
+                showMainAlert('Huella dactilar capturada exitosamente', 'success');
             }, 2000);
         }
         
@@ -1327,14 +1934,14 @@ pruebas del sistema
                 verifyFingerprintStatus.className = "fingerprint-status status-captured";
                 isScanning = false;
                 
-                showAlert('Huella dactilar capturada para verificación', 'success');
+                showMainAlert('Huella dactilar capturada para verificación', 'success');
             }, 2000);
         }
         
         // Generar datos de huella dactilar simulados
         function generateFingerprintData() {
-            // En un sistema real, esto vendría de un escáner de huellas
-            // Generamos un identificador único para la huella
+            // Sistema de ejemplo, En un sistema real, esto vendría de un escáner de huellas
+            // Genere un identificador único para la huella
             return 'fingerprint_' + Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         }
         
@@ -1408,7 +2015,7 @@ pruebas del sistema
             localStorage.setItem('todayRegistrations', JSON.stringify(todayRegistrations));
             
             // Mostrar mensaje de éxito
-            showAlert('Recluso registrado exitosamente', 'success');
+            showMainAlert('Recluso registrado exitosamente', 'success');
             
             // Limpiar formulario
             inmateForm.reset();
@@ -1448,14 +2055,14 @@ pruebas del sistema
                     <p>Esta es su visita número: ${matchedInmate.visits} al penal</p>
                 `;
                 
-                showAlert('Recluso identificado. Es un reincidente.', 'warning');
+                showMainAlert('Recluso identificado. Es un reincidente.', 'warning');
             } else {
                 verificationResult.innerHTML = `
                     <div class="no-match">NO SE ENCONTRARON COINCIDENCIAS</div>
                     <p>Esta huella dactilar no está registrada en el sistema.</p>
                 `;
                 
-                showAlert('No se encontraron coincidencias en la base de datos', 'danger');
+                showMainAlert('No se encontraron coincidencias en la base de datos', 'danger');
             }
             
             verificationResult.style.display = 'block';
@@ -1633,7 +2240,7 @@ pruebas del sistema
             localStorage.setItem('prisonInmates', JSON.stringify(inmates));
             
             // Mostrar mensaje de éxito
-            showAlert('Datos del recluso actualizados exitosamente', 'success');
+            showMainAlert('Datos del recluso actualizados exitosamente', 'success');
             
             // Cerrar el modal
             closeEditModal();
@@ -1650,7 +2257,7 @@ pruebas del sistema
                 localStorage.setItem('prisonInmates', JSON.stringify(inmates));
                 updateStats();
                 renderInmateList();
-                showAlert('Recluso eliminado del sistema', 'success');
+                showMainAlert('Recluso eliminado del sistema', 'success');
             }
         }
         
@@ -1664,8 +2271,8 @@ pruebas del sistema
             repeatOffendersElement.textContent = repeatOffenders;
         }
         
-        // Mostrar alerta
-        function showAlert(message, type) {
+        // Mostrar alerta en la aplicación principal
+        function showMainAlert(message, type) {
             // Crear elemento de alerta
             const alert = document.createElement('div');
             alert.className = `alert alert-${type}`;
